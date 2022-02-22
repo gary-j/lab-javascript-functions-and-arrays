@@ -33,7 +33,7 @@ function findLongestWord(array) {
       }
     })
   }
-  console.log(longestWord + " : LONGESTWORD");
+  // console.log(longestWord + " : LONGESTWORD");
   return longestWord;
   
 }
@@ -115,15 +115,18 @@ function averageWordLength(array) {
     })
     return average / array.length;
   }
- 
-
-
 }
 
 // Bonus - Iteration #4.1
 function avg(array) {
-let sum = sumNumbers(array);
-let average = sum / array
+
+  if(array.length===0){
+    return null;
+  }
+  let previousSum = sum(array);
+  let average =  previousSum / array.length;
+  let rounded = average.toFixed(2)*1;
+  return rounded;
 
 }
 
@@ -142,14 +145,35 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(array) {
+  if(array.length===0){
+    return null;
+  }
+  let unique=[];
+  array.forEach(elem =>{
+    if(!unique.includes(elem)){
+      unique.push(elem);
+    }
+  })
+  return unique;
+}
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(array, word) {
+  if(array.length===0){
+    return null;
+  }
+  if(array.includes(word)){
+    return true;
+  }
+  else{
+    return false;
+  } 
+}
 
 
 
@@ -168,7 +192,20 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(array, word) {
+
+  if(array.length === 0){
+    return 0;
+  }
+  let countWord = 0;
+
+  array.forEach(elem => {
+    if(elem === word){
+      countWord++;
+    }
+  })
+  return countWord;
+}
 
 
 
@@ -196,7 +233,9 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() {}
+function greatestProduct(matrix) {
+  
+}
 
 
 
