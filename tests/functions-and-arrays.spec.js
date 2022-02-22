@@ -115,7 +115,7 @@ describe('Bonus: Calculate the sum', () => {
   test('should return the sum when passed array of numbers', () => {
     expect(sum([10, 5, 4, 32, 8])).toBe(59);
   });
-
+// Iteration 4 - level 2 ligne 87
   test('should return the sum when passed array of strings', () => {
     expect(sum(['ana', 'marco', 'nicolas', 'tania', 'ptwd'])).toBe(24);
   });

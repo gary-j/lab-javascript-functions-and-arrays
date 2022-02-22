@@ -59,11 +59,23 @@ function sumNumbers(array) {
 
 // Iteration #3.1 Bonus:
 function sum(array) {
-  let sum = 0;
-  for(let i=0; i<array.length; i++){
-sum += array[i];
-  }
-  return sum;
+// sum any type
+let bigSum = 0;
+  array.forEach(elem => {
+    if(typeof elem ==="boolean"){
+      bigSum += Number(elem);
+    }
+    else if(typeof elem ==="number"){
+      bigSum += elem;
+    }
+    else if(typeof elem ==="string"){
+      bigSum += elem.length;
+    }
+    else{
+      throw "Unsupported data type sir or ma'am";
+    }
+  })
+  return bigSum;
 }
 
 
@@ -73,6 +85,9 @@ sum += array[i];
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers(array) {
+  if(array.length===0){
+    return null;
+  }
   let disivor = array.length;
   let sum = 0;
   for(let i=0; i<array.length; i++){
@@ -80,7 +95,6 @@ function averageNumbers(array) {
       }
   let average = sum / array.length ;
   return average;
-
 }
 
 
@@ -88,13 +102,30 @@ function averageNumbers(array) {
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
 function averageWordLength(array) { 
+  let average = 0;
   if(array.length===0){
     return null;
+  }else if (array.length === 1){
+    average += array[0].length;
+    return average;
   }
+  else{
+    array.forEach(elem => {
+      average += elem.length;
+    })
+    return average / array.length;
+  }
+ 
+
+
 }
 
 // Bonus - Iteration #4.1
-function avg() {}
+function avg(array) {
+let sum = sumNumbers(array);
+let average = sum / array
+
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
